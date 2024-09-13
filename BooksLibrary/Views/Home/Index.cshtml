@@ -1,0 +1,42 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BooksLibrary</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <main role="main" class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome to BooksLibrary!</h1>
+            <p class="lead">Explore our collection of books and manage your library efficiently.</p>
+            <a class="btn btn-primary btn-lg" href="~/Book/Browse" role="button">Browse Books</a>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h2>Discover</h2>
+                <p>Find new books to read and add them to your collection.</p>
+                <a class="btn btn-secondary" href="https://www.goodreads.com/list/show/14220.IMDB_250">Discover More</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Manage</h2>
+                <p>Organize and manage your book collection with ease.</p>
+                <a class="btn btn-secondary" href="~/Book/BookIndex">Manage Books</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Learn</h2>
+                <p>Learn more about the latest trends and updates in the world of books.</p>
+                <a class="btn btn-secondary" href="https://booktrib.com" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

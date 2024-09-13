@@ -1,0 +1,50 @@
+﻿@model BooksDTO
+
+<h1>Delete Book</h1>
+
+<div>
+    <form asp-action="DeleteBook">
+        <input asp-for="ID" hidden/>
+        <div class="container border p-3">
+            <hr />
+            <div class="row">
+                <div class="col-2">
+                    <label asp-for="BookTitle" class="control-label pt-2" style="font-size:20px"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="BookTitle" disabled class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="Author" class="control-label pt-2" style="font-size:20px"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="Author" disabled class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="Genre" class="control-label pt-2" style="font-size:20px"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="Genre" disabled class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="Description" class="control-label pt-2" style="font-size:20px"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="Description" disabled class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="IsAvailable" class="control-label pt-2" style="font-size:20px"></label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="IsAvailable" disabled class="form-control" />
+                </div>
+
+
+                <div class="col-5">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a asp-action="BookIndex">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

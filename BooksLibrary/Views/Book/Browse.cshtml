@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BooksDTO>
+
+<div class="container mt-4">
+    <h1 class="display-4">Available Books</h1>
+
+    @if (Model.Any())
+    {
+        <div class="row">
+            @foreach (var book in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-dark text-light border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">@book.BookTitle</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                            <p class="card-text"><strong>Genre:</strong> @book.Genre</p>
+                            <p class="card-text"><strong>Description:</strong> @book.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-light">No books available at the moment.</p>
+    }
+</div>

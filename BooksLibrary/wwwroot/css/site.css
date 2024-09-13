@@ -1,0 +1,138 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.container {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #ff5722;
+    border-color: #ff5722;
+}
+
+    .btn-primary:hover {
+        background-color: #e64a19;
+        border-color: #e64a19;
+    }
+
+.navbar {
+    background-color: #212529;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
+    .navbar-brand:hover, .navbar-nav .nav-link:hover {
+        color: #ff5722;
+    }
+.card {
+    background-color: #343a40;
+    color: #f8f9fa; 
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title, .card-subtitle, .card-text {
+    color: #f8f9fa; 
+}
+
+    .card-subtitle.text-muted {
+        color: #6c757d; 
+    }
+
+.table-dark {
+    background-color: #343a40;
+    color: #f8f9fa; 
+}
+
+    .table-dark thead th {
+        background-color: #212529;
+        color: #f8f9fa; 
+    }
+
+    .table-dark tbody tr:nth-child(even) {
+        background-color: #495057;
+    }
+
+    .table-dark tbody tr:nth-child(odd) {
+        background-color: #343a40;
+    }
+
+    .table-dark td, .table-dark th {
+        border-color: #6c757d; 
+    }
+
+.btn-outline-primary {
+    color: #ff5722;
+    border-color: #ff5722;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #ff5722; 
+        color: #ffffff; 
+    }
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+    .btn-success:hover {
+        background-color: #218838; 
+        border-color: #1e7e34;
+    }
+
+.btn-warning {
+    background-color: #ffc107; 
+    border-color: #ffc107;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+.ms-2 {
+    margin-left: 0.5rem;
+}
