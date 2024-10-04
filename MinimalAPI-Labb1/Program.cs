@@ -1,4 +1,3 @@
-
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using MinimalAPI_Labb1.Data;
@@ -14,6 +13,19 @@ namespace MinimalAPI_Labb1
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             builder.Services.AddAuthorization();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,7 +34,8 @@ namespace MinimalAPI_Labb1
             builder.Services.AddAutoMapper(typeof(MappingConfig));
             builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionToDB")));
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionToDB")));
 
             builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 
@@ -37,6 +50,9 @@ namespace MinimalAPI_Labb1
 
             app.UseHttpsRedirection();
 
+            
+            app.UseCors("AllowAllOrigins");
+
             app.UseAuthorization();
 
             app.ConfigurationBooksEndpoints();
@@ -45,3 +61,4 @@ namespace MinimalAPI_Labb1
         }
     }
 }
+

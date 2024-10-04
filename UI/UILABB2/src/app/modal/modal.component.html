@@ -1,0 +1,55 @@
+<div class="modal">
+    <div class="modal-content">
+    <span class="close" (click)="onClose()">&times;</span>
+    <h2>{{ modalType === 'edit' ? 'Edit Book' : modalType === 'add' ? 'Add Book' : 'Book Details' }}</h2>
+
+      <form *ngIf="modalType !== 'details'" (ngSubmit)="modalType === 'add' ? onAdd() : onUpdate()">
+        <label for="bookTitle">Book Title:</label>
+        <input [(ngModel)]="book.bookTitle" name="bookTitle" id="bookTitle" required />
+
+        <label for="author">Author:</label>
+        <input [(ngModel)]="book.author" name="author" id="author" required />
+
+        <label for="genre">Genre:</label>
+        <input [(ngModel)]="book.genre" name="genre" id="genre" required />
+
+        <label for="description">Description:</label>
+        <textarea [(ngModel)]="book.description" name="description" id="description" required></textarea>
+
+        <label for="isAvailable">Available:</label>
+        <input type="checkbox" [(ngModel)]="book.isAvailable" name="isAvailable" id="isAvailable" />
+
+        <button type="submit">{{ modalType === 'add' ? 'Add' : 'Update Book' }}</button>
+    </form>
+
+
+      <div *ngIf="modalType === 'details'">
+        <p><strong>Title:</strong> {{ book.bookTitle }}</p>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Available:</strong> {{ book.isAvailable ? 'Yes' : 'No' }}</p>
+        <button (click)="onClose()">Close</button>
+    </div>
+    <div *ngIf="modalType === 'edit'">
+        <p><strong>Title:</strong> {{ book.bookTitle }}</p>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Available:</strong> {{ book.isAvailable ? 'Yes' : 'No' }}</p>
+        <button (click)="onClose()">Close</button>
+    </div>
+    <div *ngIf="modalType === 'add'">
+        <p><strong>Title:</strong> {{ book.bookTitle }}</p>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Available:</strong> {{ book.isAvailable ? 'Yes' : 'No' }}</p>
+        <button (click)="onClose()">Close</button>
+    </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,53 @@
+<body>
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <h2>All Available Books</h2>
+  
+    <div *ngIf="isLoading" class="loading-message">Loading...</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <button (click)="toggleManageBooks()">
+      {{ isManageBooks ? 'View Available Books' : 'Manage Books' }}
+    </button>
+  
+    <button (click)="openAddBookModal()" *ngIf="isManageBooks">Add Book</button>
+  
+    <ul class="book-list" *ngIf="!isManageBooks">
+      <ng-container *ngFor="let b of books">
+        <li *ngIf="b.isAvailable">
+          <div>
+            <strong>{{ b.bookTitle }}</strong> by {{ b.author }}
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+    <div *ngIf="isManageBooks">
+      <h2>Manage Books</h2>
+      <ul class="book-list">
+        <li *ngFor="let b of books">
+          <div>
+            <strong>{{ b.bookTitle }}</strong> by {{ b.author }}
+          </div>
+          <button (click)="openModal(b, 'edit')">Edit</button>
+          <button (click)="onDelete(b.id)">Delete</button>
+          <button (click)="openModal(b, 'details')">Details</button>
+        </li>
+      </ul>
+    </div>
+  
+  
+    <app-modal 
+    *ngIf="isModalOpen" 
+    [book]="book" 
+    [modalType]="modalType" 
+    (closeModal)="closeModal()" 
+    (updateBook)="updateBook($event)" 
+    (addBook)="addBook($event)">
+  </app-modal>
+  </div>
+</body>
+
+
+
+
+
